@@ -6,6 +6,9 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+@import '~sweetalert2/dist/sweetalert2.min.css';
+
+@import "partials/forms";
 
 body{
 	padding-top: 70px;

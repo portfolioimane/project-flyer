@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests;
+use App\Flyer;
 class FlyersController extends Controller
 {
     /**
@@ -23,7 +24,11 @@ class FlyersController extends Controller
      */
     public function create()
     {
-        //
+        //flash('Hello World', 'this is the message');
+
+
+         flash()->overlay('Welcome Abroad', 'Thank you for signing up.');
+        return view('flyers.create');
     }
 
     /**
@@ -32,9 +37,16 @@ class FlyersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\FlyerRequest $request)
     {
-        //
+        // create the flyer
+        // $request->all()
+       // $validator=$this->validate();
+    //validation was succesful show sweetalert and return
+          Flyer::create($request->all()); 
+         flash()->success('Success!', 'Your flyer has been created.');
+        return redirect('/');
+
     }
 
     /**

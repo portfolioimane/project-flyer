@@ -15,9 +15,10 @@ class CreateFlyersTable extends Migration
     {
         Schema::create('flyers', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned();
             $table->string('street');
             $table->string('city', 40);
-            $table->string('zip', 10);
+            $table->string('zip');
             $table->string('state', 40);
             $table->string('country', 40);
             $table->integer('price');

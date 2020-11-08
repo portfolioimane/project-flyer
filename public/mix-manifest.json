@@ -1,4 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/popper.js": "/js/popper.js",
+    "/libjs/js/lity.js": "/libjs/js/lity.js",
+    "/csslib/lity.css": "/csslib/lity.css"
 }

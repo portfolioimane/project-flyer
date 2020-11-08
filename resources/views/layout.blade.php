@@ -5,9 +5,9 @@
 	<title>Project Flyer</title>
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.8.1/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.css" >
 </head>
 <body>
-
 	 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="#">ProjectFlyer</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,12 +26,14 @@
         <a class="nav-link" href="#">Contact</a>
       </li>
     </ul>
+
   </div>
 </nav>
 	<div class="container">
 		@yield('content')
 	</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.8.1/sweetalert2.min.js"></script>
+  @yield('scripts.footer')
   @include('flash')
 </body>
 </html>

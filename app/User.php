@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Flyer;
 
 class User extends Authenticatable
 {
@@ -15,6 +16,7 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table='users';
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -27,6 +29,17 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function owns($relation){
+        return $relation->user_id==$this->id;
+    }
+
+    public function flyers(){
+        return $this->hasMany(Flyer::class);
+    }
+    public function publish(Flyer $flyer){
+        return $this->flyers()->save($flyer);
+    }
 
     /**
      * The attributes that should be cast to native types.

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 @section('content')
    <div class="jumbotron">
     <h1>Project flyer</h1>

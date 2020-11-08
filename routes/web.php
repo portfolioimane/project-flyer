@@ -15,4 +15,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('pages.home');
 });
+
 Route::resource('flyers', 'FlyersController');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('{zip}/{street}', 'FlyersController@show');
+Route::post('{zip}/{street}/photos', ['as' => 'store_photo_path', 'uses'=>'PhotosController@store']);
+Route::delete('photos/{id}', 'PhotosController@destroy');
+
+Auth::routes();
+
+

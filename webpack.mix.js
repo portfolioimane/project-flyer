@@ -12,6 +12,9 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/lity.js', 'public/libjs/js')
+    .styles('resources/csslib/lity.css', 'public/csslib/lity.css')
     .sass('resources/sass/app.scss', 'public/css')
+    .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
     ;
 

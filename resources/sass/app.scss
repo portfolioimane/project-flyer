@@ -7,9 +7,14 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import '~sweetalert2/dist/sweetalert2.min.css';
-
 @import "partials/forms";
 
 body{
 	padding-top: 70px;
+}
+img{
+	max-width:100%;
+}
+.gallery__image{
+	margin-bottom: 1em;
 }

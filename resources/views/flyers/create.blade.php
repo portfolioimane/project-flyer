@@ -1,8 +1,7 @@
-@extends('layout')
+@extends('layouts.app')
 @section('content')
    <h1>Selling Your Home?</h1>
-   <div class="row">
-      <form method="POST" action="/project-flyer/public/flyers" enctype="multipart/form-data" class="col-md-6">
+      <form method="POST" action="/project-flyer/public/flyers" enctype="multipart/form-data">
    	 @include('flyers.form')
    	 @if(count($errors) > 0)
    	    <div class="alert alert-danger">
@@ -14,5 +13,4 @@
    	    </div>
    	 @endif
    </form>
-   </div>
 @stop
